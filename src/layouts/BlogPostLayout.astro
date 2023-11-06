@@ -1,0 +1,14 @@
+---
+import "@styles/global.css";
+import Navigation from "@components/Navigation.astro";
+const { frontmatter } = Astro.props;
+---
+
+<html>
+    <!-- ... -->
+
+    <Navigation />
+    <slot />
+    <!-- Markdown 内容被注入到这里 -->
+    <!-- ... -->
+</html>

@@ -1,0 +1,47 @@
+---
+const { href } = Astro.props;
+interface Page {
+    href: Route;
+    content: string;
+}
+enum Route {
+    Home = "/",
+    About = "/about",
+    Blog = "/blog",
+}
+const pages: Page[] = [
+    { href: Route.Home, content: "首页" },
+    {
+        href: Route.About,
+        content: "关于",
+    },
+    {
+        href: Route.Blog,
+        content: "博客",
+    },
+];
+
+const style =
+    "shrink-0 border-b-2 border-transparent px-1 pb-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700";
+const current_style =
+    "shrink-0 border-b-2 border-sky-500 px-1 pb-4 text-base font-bold text-sky-600";
+---
+
+<div>
+    <div class="hidden sm:block">
+        <div class="flex justify-center border-b border-gray-200">
+            <nav class="-mb-px flex gap-6" aria-label="Tabs">
+                {
+                    pages.map((page) => (
+                        <a
+                            href={page.href}
+                            class={href == page.href ? current_style : style}
+                        >
+                            {page.content}
+                        </a>
+                    ))
+                }
+            </nav>
+        </div>
+    </div>
+</div>
