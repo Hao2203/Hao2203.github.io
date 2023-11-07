@@ -1,23 +1,15 @@
 ---
+import Navigation from "@components/Navigation.astro";
 import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
-<html lang="zh-cn">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Astro</title>
-    </head>
-    <body>
-        <Navigation href="/" />
-        <div
-            class="bg-cover bg-center min-h-[95vh] flex justify-center items-center"
-            style="background-image: url('/sun.jpg');"
-        >
-            <h1 class="text-3xl font-bold">This is Home</h1>
-        </div>
-    </body>
-</html>
+<BaseLayout pageTitle="首页">
+    <Navigation href="/" />
+    <div
+        class="bg-cover bg-center min-h-[95vh] flex justify-center items-center"
+        style="background-image: url('/sun.jpg');"
+    >
+        <h1 class="text-3xl font-bold">This is Home</h1>
+    </div>
+</BaseLayout>

@@ -7,8 +7,25 @@ const { frontmatter } = Astro.props;
 <html>
     <!-- ... -->
 
-    <Navigation />
-    <slot />
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{frontmatter.title}</title>
+    </head>
+    <body>
+        <Navigation />
+        <div class="flex flex-col items-center bg-yellow-200">
+            <h1>{frontmatter.title}</h1>
+            <p>{frontmatter.pubDate.slice(0, 10)}</p>
+            <p><em>{frontmatter.description}</em></p>
+            <p>Written by: {frontmatter.author}</p>
+        </div>
+        <div class="flex flex-col items-center">
+            <slot />
+        </div>
+    </body>
     <!-- Markdown 内容被注入到这里 -->
     <!-- ... -->
 </html>

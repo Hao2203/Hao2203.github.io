@@ -19,20 +19,10 @@ const skill_colors = "navy";
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
-        <style define:vars={{ skill_colors }}>
-            h1 {
-                color: purple;
-                font-size: 3rem;
-            }
-            .skill {
-                color: var(--skill_colors);
-                font-weight: bold;
-            }
-        </style>
     </head>
     <body>
         <Navigation href="/about" />
-        <h1>{pageTitle}</h1>
+        <h1 class="text-purple-500 text-[3rem]">{pageTitle}</h1>
         <p>以下是关于我的几个事实：</p>
         <ul>
             <li>我的名字是{identity.firstName}.</li>
