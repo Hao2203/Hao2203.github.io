@@ -1,0 +1,22 @@
+---
+import "../styles/global.css";
+interface Props {
+    posts: any[];
+}
+const { posts } = Astro.props;
+---
+
+<div class="flex flex-col items-center">
+    <h1>我的博客</h1>
+    <ul class="">
+        {
+            posts?.map((post) => (
+                <li>
+                    <a class="hover:text-blue-400" href={post.url}>
+                        {post.frontmatter.title}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</div>

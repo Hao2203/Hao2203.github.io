@@ -28,6 +28,24 @@ const current_style =
 ---
 
 <div>
+    <div class="sm:hidden">
+        <label for="Tab" class="sr-only">Tab</label>
+
+        <select
+            id="Tab"
+            onchange="location = this.value"
+            class="w-full rounded-md border-gray-800 border-2"
+        >
+            {
+                pages.map((page) => (
+                    <option value={page.href} selected={href == page.href}>
+                        {page.content}
+                    </option>
+                ))
+            }
+        </select>
+    </div>
+
     <div class="hidden sm:block">
         <div class="flex justify-center border-b border-gray-200">
             <nav class="-mb-px flex gap-6" aria-label="Tabs">
