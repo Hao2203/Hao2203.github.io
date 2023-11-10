@@ -1,6 +1,16 @@
 ---
 import "@styles/global.css";
 import Navigation from "@components/Navigation.astro";
+interface Frontmatter {
+    title: string;
+    pubDate?: string;
+    description?: string;
+    author?: string;
+    tags?: string[];
+}
+interface Props {
+    frontmatter: Frontmatter;
+}
 const { frontmatter } = Astro.props;
 ---
 
@@ -18,9 +28,19 @@ const { frontmatter } = Astro.props;
         <Navigation />
         <div class="flex flex-col items-center bg-yellow-200">
             <h1>{frontmatter.title}</h1>
-            <p>{frontmatter.pubDate.slice(0, 10)}</p>
+            <p>{frontmatter.pubDate?.slice(0, 10)}</p>
             <p><em>{frontmatter.description}</em></p>
             <p>Written by: {frontmatter.author}</p>
+        </div>
+        <div class="flex items-center flex-col border-2">
+            <div>这是标签</div>
+            {
+                frontmatter.tags?.map((tag: unknown) => (
+                    <p class=" hover:text-blue-700 border-black border-2 ">
+                        <a href={`/tags/${tag}`}>{tag}</a>
+                    </p>
+                ))
+            }
         </div>
         <div class="flex flex-col items-center">
             <slot />

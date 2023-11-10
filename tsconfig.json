@@ -1,29 +1,31 @@
 {
-    "extends": "astro/tsconfigs/base",
-    "compilerOptions": {
-        "moduleResolution": "node",
-        "plugins": [
-            {
-                "name": "@astrojs/ts-plugin"
-            },
-        ],
-        "baseUrl": ".",
-        "paths": {
-            "@components/*": [
-                "src/components/*"
-            ],
-            "@layouts/*": [
-                "src/layouts/*"
-            ],
-            "@pages/*": [
-                "src/pages/*"
-            ],
-            "@styles/*": [
-                "src/styles/*"
-            ],
-            "@scripts/*": [
-                "src/scripts/*"
-            ],
-        }
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      }
+    ],
+    "baseUrl": "/home/debian/blog",
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@scripts/*": [
+        "src/scripts/*"
+      ]
     },
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
+  }
 }

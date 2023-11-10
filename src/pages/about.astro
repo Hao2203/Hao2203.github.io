@@ -1,32 +1,23 @@
 ---
 import "../styles/global.css";
 import Navigation from "../components/Navigation.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 
 const pageTitle = "about me";
 const identity = {
     firstName: "hao",
     country: "China",
 };
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-const skill_colors = "navy";
 ---
 
-<html lang="zh-cn">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-    </head>
-    <body>
-        <Navigation href="/about" />
-        <h1 class="text-purple-500 text-[3rem]">{pageTitle}</h1>
-        <p>以下是关于我的几个事实：</p>
-        <ul>
-            <li>我的名字是{identity.firstName}.</li>
-            <li>我住在{identity.country}。</li>
-        </ul>
-    </body>
-</html>
+<BaseLayout>
+    <Navigation href="/about" />
+    <h1 class="text-purple-500 text-[3rem]">
+        {pageTitle}
+    </h1>
+    <p>以下是关于我的几个事实：</p>
+    <ul>
+        <li>我的名字是{identity.firstName}.</li>
+        <li>我住在{identity.country}。</li>
+    </ul>
+</BaseLayout>
