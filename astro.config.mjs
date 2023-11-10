@@ -8,8 +8,8 @@ import node from "@astrojs/node";
 export default defineConfig({
   site: 'https://Hao2203.github.io',
   integrations: [tailwind(), solidJs()],
-  output: "server",
-  adapter: node({
-    mode: "standalone"
-  })
+  // output: "server",
+  // adapter: node({
+  //   mode: "standalone"
+  // })
 });
