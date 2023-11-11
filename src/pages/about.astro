@@ -1,9 +1,7 @@
 ---
-import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
+import Header from "@components/Header.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-const pageTitle = "about me";
 const identity = {
     firstName: "hao",
     country: "China",
@@ -11,13 +9,12 @@ const identity = {
 ---
 
 <BaseLayout>
-    <Navigation href="/about" />
-    <h1 class="text-purple-500 text-[3rem]">
-        {pageTitle}
-    </h1>
-    <p>以下是关于我的几个事实：</p>
-    <ul>
-        <li>我的名字是{identity.firstName}.</li>
-        <li>我住在{identity.country}。</li>
-    </ul>
+    <Header href="/about" />
+    <div class="max-w-xl m-auto">
+        <p class="text-2xl mb-5">以下是关于我的几个事实：</p>
+        <ul>
+            <li>我的名字是{identity.firstName}.</li>
+            <li>我住在{identity.country}。</li>
+        </ul>
+    </div>
 </BaseLayout>

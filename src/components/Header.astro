@@ -1,0 +1,12 @@
+---
+import Navigation from "./Navigation.astro";
+
+interface Props {
+    href?: string;
+}
+const props = Astro.props;
+---
+
+<div class="flex items-center justify-center">
+    <Navigation href={props.href} />
+</div>

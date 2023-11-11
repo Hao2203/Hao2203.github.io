@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Navigation from "@components/Navigation.astro";
+import Header from "@components/Header.astro";
 import type { MarkdownInstance } from "astro";
 const pageTitle = "tags";
 
@@ -15,14 +15,17 @@ export const tags = [
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <Navigation href="/tags" />
-    <div class="flex items-center flex-col">
-        {
-            tags.map((tag) => (
-                <p class=" hover:text-blue-700 border-black border-2 ">
-                    <a href={`/tags/${tag}`}>{tag}</a>
-                </p>
-            ))
-        }
+    <Header href="/tags" />
+    <div class="m-auto max-w-xl">
+        <div class="flex content-start flex-col">
+            <h1 class="text-5xl mb-8">TAG:</h1>
+            {
+                tags.map((tag) => (
+                    <p class=" hover:text-blue-700 text-xl">
+                        <a href={`/tags/${tag}`}>{tag}</a>
+                    </p>
+                ))
+            }
+        </div>
     </div>
 </BaseLayout>

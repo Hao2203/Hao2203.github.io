@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
-import Navigation from "../../components/Navigation.astro";
+import Header from "@components/Header.astro";
 import type { Post } from "./index.astro";
 
 interface Path {
@@ -39,7 +39,7 @@ const filteredPosts = posts.filter((post) =>
 ---
 
 <BaseLayout pageTitle={tag}>
-    <Navigation />
+    <Header />
     <p>Posts tagged with {tag}</p>
     {(<BlogPost posts={filteredPosts} />)}
 </BaseLayout>

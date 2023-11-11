@@ -1,5 +1,4 @@
 ---
-import ThemeIcon from "./ThemeIcon.astro";
 const { href } = Astro.props;
 interface Page {
     href: Route;
@@ -28,9 +27,9 @@ const pages: Page[] = [
 ];
 
 const style =
-    "shrink-0 border-b-2 border-transparent px-1 pt-1 pb-2 min-h-[5vh] text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700";
+    "shrink-0 border-b-4 border-transparent px-1 pt-1 pb-2 text-base font-medium text-gray-500 hover:border-sky-500 hover:text-sky-500 hover:font-bold";
 const current_style =
-    "shrink-0 border-b-2 border-sky-500 px-1 pt-1 pb-2 min-h-[5vh] text-base font-bold text-sky-600";
+    "shrink-0 border-b-4 border-sky-500 px-1 pt-1 pb-2 text-base font-bold ";
 ---
 
 <div>
@@ -53,20 +52,20 @@ const current_style =
     </div>
 
     <div class="hidden sm:block">
-        <div class="flex justify-center border-b border-gray-200">
-            <nav class="-mb-px flex gap-6" aria-label="Tabs">
-                {
-                    pages.map((page) => (
-                        <a
-                            href={page.href}
-                            class={href == page.href ? current_style : style}
-                        >
-                            {page.content}
-                        </a>
-                    ))
-                }
-                <ThemeIcon />
-            </nav>
-        </div>
+        <nav
+            class="-mb-px flex gap-6 items-center justify-center h-14"
+            aria-label="Tabs"
+        >
+            {
+                pages.map((page) => (
+                    <a
+                        href={page.href}
+                        class={href == page.href ? current_style : style}
+                    >
+                        {page.content}
+                    </a>
+                ))
+            }
+        </nav>
     </div>
 </div>
