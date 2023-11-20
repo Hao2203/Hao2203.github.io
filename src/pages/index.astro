@@ -2,7 +2,8 @@
 import "../styles/global.css";
 import Header from "@components/Header.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Greeting from "@components/Greeting";
+import { Greeting } from "@components/Greeting";
+import { Counter } from "@components/Counter";
 ---
 
 <BaseLayout pageTitle="首页">
@@ -13,10 +14,7 @@ import Greeting from "@components/Greeting";
         <Header href="/" />
         <div class="flex flex-col items-center justify-center h-[90vh]">
             <h1 class="text-3xl font-bold">This is Home</h1>
-            <Greeting
-                client:load
-                messages={["Hi", "Hello", "Howdy", "Hey there"]}
-            />
+            <Greeting messages={["Hi", "Hello", "Howdy", "Hey there"]} />
         </div>
     </div>
 </BaseLayout>
